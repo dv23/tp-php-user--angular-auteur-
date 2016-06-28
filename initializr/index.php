@@ -52,7 +52,7 @@
             include 'user.php';
           ?>
 
-          // tab
+          
           <form class="form-inline">
             <div class="form-group">
               <label for="exampleInputName2">Name</label>
@@ -63,7 +63,7 @@
             <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
           </div>
           </form>
-          // form bidon 
+          
 
         </div>
       <hr>
