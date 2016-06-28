@@ -3,7 +3,7 @@
 //$my_string = 'Bonjour lulu !!';
 //$my_int = 10;
 //$my_state = TRUE;
-$my_users = array(
+$users = array(
   0=>array(
     'id'=> '1',
     'name' => 'JP',
@@ -39,26 +39,27 @@ $my_users = array(
   );
 
 //print $my_string;
-
 //print '<table class="table table-hover">'
 //foreach($my_users as $id => $name) {
 //foreach($my_users as $key => $name) {
 
-$markup='<table class="table table-hover">';
+$markup ='<table class="table table-hover">';
 $markup .= '<thead> <tr> <th>#</th> <th>Name</th> <th>Email</th> <th>Rôles</th></tr> </thead>';
 $markup .= '<tbody>';
 
-foreach($my_users as $user) {
-  generate_user_row($user);
+foreach($users as $user) {
+  $markup .= '<tr>';
+  $markup .= generate_user_row($user);
+  $markup .= '</tr>';
   //$markup = $key .' => '.$name.'<br/>';
   //$markup = $id .'=>' .$name . '<br/>';
   //print $markup;
   //die();
   }
 
-//$markup.='</tbody>';
-//$markup .= '</table>';
-//print $markup;
+$markup.='</tbody>';
+$markup .= '</table>';
+print $markup;
 
 function generate_user_row($user=NULL){
     //print 'nom:' . $user['name'].'<br>';
@@ -86,7 +87,7 @@ function generate_user_role_cell($roles){
                             }*/
   $nb = count($roles);
     //$markup = NULL;
-  for ($i = 0;$i <= $nb; $i++){
+  for ($i = 0;$i < $nb; $i++){
     if ($i) {
       /*print '<pre>';
       print_r($i);
@@ -99,7 +100,7 @@ function generate_user_role_cell($roles){
       //',' . $roles[$i];
         }*/
                             
-  $cell .= '</td>';
+	$cell .= '</td>';
 
   return $cell;
 }
